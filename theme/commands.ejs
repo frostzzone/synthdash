@@ -1,0 +1,51 @@
+<%- await include("partials/header", { bot, user, title: "Home", is_logged, dashboardDetails, dashboardConfig, hasClientSecret }) %>
+  <body style="background-attachment: fixed; background-size: cover; background-position: center; background-image: url('https://www.gifcen.com/wp-content/uploads/2022/04/wallpaper-gif-4.gif');">
+
+<div class="container-sm center" style="margin-top: 25px;">
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <h2><%= dashboardDetails.name %>'s commands</h2>
+    <hr>
+
+    <table class="table table-striped table-hover" style="background-color: #622d86;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% commands.forEach((command, rank) => { %>
+                <tr>
+                    <th scope="row"><%= rank + 1 %></th>
+                    <td><%= command.name %></td>
+                    <td><%= command.description %></td>
+                    <td><%= command.usage %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    
+    <% if(dashboardDetails.serverUrl) { %>
+        <p>Need more help ?</p>
+        <a class="btn butn" style="width: 100%;" href="<%= dashboardDetails.serverUrl %>">Discord Server</a>
+    <% } %>
+
+  </div>
+</div>
+      <% try { %>
+  <% if(dashboardDetails.customData.commands.footer.text !== undefined){ %>
+    <div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: <%= dashboardDetails.customData.commands.footer.color ? dashboardDetails.customData.commands.footer.color : `#622d86` %>; opacity: 0.75; color: white; text-align: center; padding: 3px;">
+      <h3><%= dashboardDetails.customData.commands.footer.text %></h3>
+    </div>
+  <% } %>
+<% } catch (err) { %>
+  <% try { %>
+    <div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: <%= dashboardDetails.customData.all.footer.color ? dashboardDetails.customData.all.footer.color : `#622d86` %>; opacity: 0.75; color: white; text-align: center; padding: 3px;">
+      <h3><%= dashboardDetails.customData.all.footer.text %></h3>
+    </div>
+  <% } catch (err) { %>
+  <% }%>
+<% }%>
+<%- await include("partials/footer") %>
