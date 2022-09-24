@@ -1,6 +1,6 @@
 {
     "name": "synthdash",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A custom theme for the discord-easy-dashboard package.",
     "main": "index.js",
     "scripts": {
