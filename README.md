@@ -37,11 +37,11 @@ client.login('Your.Token.Here')
 
 Use frost's edited version of [discord-easy-dashboard](https://github.com/SimonLeclere/discord-easy-dashboard) by running 
 
-    `npm install https://github.com/frostzzone/discord-easy-dashboard`
-    
+    npm install https://github.com/frostzzone/discord-easy-dashboard
+   
 or if your using yarn
 
-    `yarn add https://github.com/frostzzone/discord-easy-dashboard`
+    yarn add https://github.com/frostzzone/discord-easy-dashboard
     
 to add custom footers
 
