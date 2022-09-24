@@ -8,5 +8,4 @@ module.exports = {
 	selector: join(__dirname, BASE_PATH, 'selector.ejs'),
 	commands: join(__dirname, BASE_PATH, 'commands.ejs'),
 	404: join(__dirname, BASE_PATH, '404.ejs'),
-  test: join(__dirname, BASE_PATH, 'test.ejs')
 };

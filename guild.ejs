@@ -10,7 +10,11 @@
             </div>
         <% } %>
         <h1><%= guild.name %>'s settings</h1>
+          <% try { %>
         <h4><%= dashboardDetails.customData.settings.detail ? dashboardDetails.customData.settings.detail : `Edit this guilds settings here` %></h4>
+          <% } catch (err) { %>
+             <h4>Edit this guilds settings</h4>
+            <% } %>
         <hr>
         <form method="POST">
             <% for (let i = 0; i < settings.length; i++) { %>
