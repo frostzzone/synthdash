@@ -60,11 +60,11 @@ client.dashboard = new Dashboard(client, {
     port: 80,
     noPortIncallbackUrl: false,
     secret: 'YoUr-Secret_Here',
-    theme: SynthDash
+    theme: SynthDash,
     customData:{
         all:{
             footer:{
-                text: "hallo"
+                text: "hallo",
                 color: "#ff0000"
             }
         }
